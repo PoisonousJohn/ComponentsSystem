@@ -5,7 +5,7 @@ class IService
 {
 public:
     IService();
-    ~IService();
+    virtual ~IService();
 };
 
 #endif // ISERVICE_H

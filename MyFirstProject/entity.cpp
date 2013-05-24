@@ -1,6 +1,26 @@
+#include <iostream>
 #include "entity.h"
 
 Entity::Entity()
 {
-    p_nId = 0;
+    id = 0;
 }
+
+Entity::~Entity() {
+    std::cout << "entity " << id << " destructor" << std::endl;
+}
+
+void Entity::setId(unsigned long id) {
+    this->id = id;
+}
+
+unsigned long Entity::getId() {
+    return id;
+}
+
+
+
+
+
+
+

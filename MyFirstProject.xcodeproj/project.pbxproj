@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		36EBC05917E5488736DAB25A /* defaultentitymanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCE2C76505848506352FD /* defaultentitymanager.cpp */; };
-		36EBC0F9AF8CD95AC39F79D0 /* entitymanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCF3AD54563B72A283A0E /* entitymanager.cpp */; };
 		36EBC3E223511E8D206A85B2 /* IEntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC1B0204F5839BB1FD189 /* IEntityManager.cpp */; };
 		36EBC6C41CAF4AE1C6B7D208 /* servicecontainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC7BF32936A815A069833 /* servicecontainer.cpp */; };
 		36EBC75895C93CF155902698 /* entitymanagerexception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC090F9EFDA2B88ED48E6 /* entitymanagerexception.cpp */; };
@@ -52,12 +51,10 @@
 		36EBC892ECB696F61F125E02 /* icomponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icomponent.cpp; sourceTree = "<group>"; };
 		36EBC8D599A9C068F8728DA1 /* iservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iservice.cpp; sourceTree = "<group>"; };
 		36EBCAFE2274E9BFCA7EAF75 /* componentsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = componentsystem.h; sourceTree = "<group>"; };
-		36EBCD0356F31F8CCC0E643F /* entitymanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entitymanager.h; sourceTree = "<group>"; };
 		36EBCE08B395C6B58436E5E1 /* MyFirstProject.pro.user */ = {isa = PBXFileReference; lastKnownFileType = file.user; path = MyFirstProject.pro.user; sourceTree = "<group>"; };
 		36EBCE2C76505848506352FD /* defaultentitymanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = defaultentitymanager.cpp; sourceTree = "<group>"; };
 		36EBCECCD9FBE3B1677901DA /* icomponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icomponent.h; sourceTree = "<group>"; };
 		36EBCF1770D5839F4EF79A56 /* MyFirstProject.pro */ = {isa = PBXFileReference; lastKnownFileType = file.pro; path = MyFirstProject.pro; sourceTree = "<group>"; };
-		36EBCF3AD54563B72A283A0E /* entitymanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entitymanager.cpp; sourceTree = "<group>"; };
 		CEB82737174F532A00155B03 /* MyFirstProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyFirstProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB8273A174F532A00155B03 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CEB8273C174F532A00155B03 /* MyFirstProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MyFirstProject.1; sourceTree = "<group>"; };
@@ -97,8 +94,6 @@
 				CEB8273C174F532A00155B03 /* MyFirstProject.1 */,
 				36EBC532801DCB58DC640F2C /* entity.cpp */,
 				36EBC0DEC67622CFF9F96A75 /* entity.h */,
-				36EBCF3AD54563B72A283A0E /* entitymanager.cpp */,
-				36EBCD0356F31F8CCC0E643F /* entitymanager.h */,
 				36EBC892ECB696F61F125E02 /* icomponent.cpp */,
 				36EBCECCD9FBE3B1677901DA /* icomponent.h */,
 				36EBC040CC23BA159945F1C9 /* icomponentsystem.cpp */,
@@ -175,7 +170,6 @@
 			files = (
 				CEB8273B174F532A00155B03 /* main.cpp in Sources */,
 				36EBC9F8198B72F4E6C67667 /* entity.cpp in Sources */,
-				36EBC0F9AF8CD95AC39F79D0 /* entitymanager.cpp in Sources */,
 				36EBCF81EDA22BE8C7100BF4 /* icomponent.cpp in Sources */,
 				36EBCCFB868F0F66E3A158AF /* icomponentsystem.cpp in Sources */,
 				36EBC8EF66C00487B30CD9CA /* iservice.cpp in Sources */,

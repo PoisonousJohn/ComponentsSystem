@@ -1,16 +1,16 @@
+
 #ifndef ENTITY_H
 #define ENTITY_H
-
-#include "IEntityManager.h"
 
 class Entity
 {
 protected:
-    unsigned int p_nId;
+    unsigned long int id;
 public:
     Entity();
-
-    friend class IEntityManager;
+    virtual ~Entity();
+    void setId(unsigned long int id);
+    unsigned long int getId();
 };
 
 #endif // ENTITY_H

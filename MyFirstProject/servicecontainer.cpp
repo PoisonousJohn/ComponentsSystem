@@ -13,7 +13,7 @@ ServiceContainer::~ServiceContainer()
     map<string, IService*>::iterator it;
 
     for (it = services_.begin(); it != services_.end(); it++) {
-        std::cout << "Deleting service " << it->first;
+        std::cout << "Deleting service " << it->first << std::endl;
         delete it->second;
     }
 

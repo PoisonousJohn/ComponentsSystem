@@ -9,15 +9,16 @@
 #define __IEntityManager_H_
 
 #include <iostream>
+#include <vector>
 #include "icomponent.h"
 #include "icomponentsystem.h"
 #include "entity.h"
-#include <vector>
+#include "iservice.h"
 
 using namespace std;
 
 
-class IEntityManager {
+class IEntityManager : public IService {
 public:
     virtual void registerEntity(Entity* entity) = 0;
     virtual void removeEntity(Entity* entity) = 0;
