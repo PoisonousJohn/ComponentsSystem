@@ -1,0 +1,292 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36EBC05917E5488736DAB25A /* defaultentitymanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCE2C76505848506352FD /* defaultentitymanager.cpp */; };
+		36EBC0F9AF8CD95AC39F79D0 /* entitymanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBCF3AD54563B72A283A0E /* entitymanager.cpp */; };
+		36EBC3E223511E8D206A85B2 /* IEntityManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC1B0204F5839BB1FD189 /* IEntityManager.cpp */; };
+		36EBC6C41CAF4AE1C6B7D208 /* servicecontainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC7BF32936A815A069833 /* servicecontainer.cpp */; };
+		36EBC75895C93CF155902698 /* entitymanagerexception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC090F9EFDA2B88ED48E6 /* entitymanagerexception.cpp */; };
+		36EBC8D1A1CAAB2EA17CD609 /* componentsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC01AD56E5ECD3451FFA7 /* componentsystem.cpp */; };
+		36EBC8EF66C00487B30CD9CA /* iservice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC8D599A9C068F8728DA1 /* iservice.cpp */; };
+		36EBC9F8198B72F4E6C67667 /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC532801DCB58DC640F2C /* entity.cpp */; };
+		36EBCCFB868F0F66E3A158AF /* icomponentsystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC040CC23BA159945F1C9 /* icomponentsystem.cpp */; };
+		36EBCF81EDA22BE8C7100BF4 /* icomponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36EBC892ECB696F61F125E02 /* icomponent.cpp */; };
+		CEB8273B174F532A00155B03 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEB8273A174F532A00155B03 /* main.cpp */; };
+		CEB8273D174F532A00155B03 /* MyFirstProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEB8273C174F532A00155B03 /* MyFirstProject.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEB82735174F532A00155B03 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				CEB8273D174F532A00155B03 /* MyFirstProject.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		36EBC019353C8AF92344338A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = file.md; path = README.md; sourceTree = "<group>"; };
+		36EBC01AD56E5ECD3451FFA7 /* componentsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = componentsystem.cpp; sourceTree = "<group>"; };
+		36EBC040CC23BA159945F1C9 /* icomponentsystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icomponentsystem.cpp; sourceTree = "<group>"; };
+		36EBC090F9EFDA2B88ED48E6 /* entitymanagerexception.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entitymanagerexception.cpp; sourceTree = "<group>"; };
+		36EBC0DEC67622CFF9F96A75 /* entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entity.h; sourceTree = "<group>"; };
+		36EBC1B0204F5839BB1FD189 /* IEntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IEntityManager.cpp; sourceTree = "<group>"; };
+		36EBC29B17E0C8491132A2DE /* iservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iservice.h; sourceTree = "<group>"; };
+		36EBC2BC632CB02892A7590A /* defaultentitymanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defaultentitymanager.h; sourceTree = "<group>"; };
+		36EBC42D54CD91123C25A8BA /* icomponentsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icomponentsystem.h; sourceTree = "<group>"; };
+		36EBC4A6F3A0C1A101A69874 /* servicecontainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = servicecontainer.h; sourceTree = "<group>"; };
+		36EBC532801DCB58DC640F2C /* entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entity.cpp; sourceTree = "<group>"; };
+		36EBC6B4777562766596B063 /* IEntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEntityManager.h; sourceTree = "<group>"; };
+		36EBC7BF32936A815A069833 /* servicecontainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = servicecontainer.cpp; sourceTree = "<group>"; };
+		36EBC86BEC506B1386777F9C /* entitymanagerexception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entitymanagerexception.h; sourceTree = "<group>"; };
+		36EBC892ECB696F61F125E02 /* icomponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = icomponent.cpp; sourceTree = "<group>"; };
+		36EBC8D599A9C068F8728DA1 /* iservice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iservice.cpp; sourceTree = "<group>"; };
+		36EBCAFE2274E9BFCA7EAF75 /* componentsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = componentsystem.h; sourceTree = "<group>"; };
+		36EBCD0356F31F8CCC0E643F /* entitymanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entitymanager.h; sourceTree = "<group>"; };
+		36EBCE08B395C6B58436E5E1 /* MyFirstProject.pro.user */ = {isa = PBXFileReference; lastKnownFileType = file.user; path = MyFirstProject.pro.user; sourceTree = "<group>"; };
+		36EBCE2C76505848506352FD /* defaultentitymanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = defaultentitymanager.cpp; sourceTree = "<group>"; };
+		36EBCECCD9FBE3B1677901DA /* icomponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = icomponent.h; sourceTree = "<group>"; };
+		36EBCF1770D5839F4EF79A56 /* MyFirstProject.pro */ = {isa = PBXFileReference; lastKnownFileType = file.pro; path = MyFirstProject.pro; sourceTree = "<group>"; };
+		36EBCF3AD54563B72A283A0E /* entitymanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = entitymanager.cpp; sourceTree = "<group>"; };
+		CEB82737174F532A00155B03 /* MyFirstProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyFirstProject; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB8273A174F532A00155B03 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CEB8273C174F532A00155B03 /* MyFirstProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MyFirstProject.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB82734174F532A00155B03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEB8272E174F532A00155B03 = {
+			isa = PBXGroup;
+			children = (
+				CEB82739174F532A00155B03 /* MyFirstProject */,
+				CEB82738174F532A00155B03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB82738174F532A00155B03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB82737174F532A00155B03 /* MyFirstProject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB82739174F532A00155B03 /* MyFirstProject */ = {
+			isa = PBXGroup;
+			children = (
+				CEB8273A174F532A00155B03 /* main.cpp */,
+				CEB8273C174F532A00155B03 /* MyFirstProject.1 */,
+				36EBC532801DCB58DC640F2C /* entity.cpp */,
+				36EBC0DEC67622CFF9F96A75 /* entity.h */,
+				36EBCF3AD54563B72A283A0E /* entitymanager.cpp */,
+				36EBCD0356F31F8CCC0E643F /* entitymanager.h */,
+				36EBC892ECB696F61F125E02 /* icomponent.cpp */,
+				36EBCECCD9FBE3B1677901DA /* icomponent.h */,
+				36EBC040CC23BA159945F1C9 /* icomponentsystem.cpp */,
+				36EBC42D54CD91123C25A8BA /* icomponentsystem.h */,
+				36EBC8D599A9C068F8728DA1 /* iservice.cpp */,
+				36EBC29B17E0C8491132A2DE /* iservice.h */,
+				36EBCF1770D5839F4EF79A56 /* MyFirstProject.pro */,
+				36EBCE08B395C6B58436E5E1 /* MyFirstProject.pro.user */,
+				36EBC019353C8AF92344338A /* README.md */,
+				36EBC7BF32936A815A069833 /* servicecontainer.cpp */,
+				36EBC4A6F3A0C1A101A69874 /* servicecontainer.h */,
+				36EBC1B0204F5839BB1FD189 /* IEntityManager.cpp */,
+				36EBC6B4777562766596B063 /* IEntityManager.h */,
+				36EBC01AD56E5ECD3451FFA7 /* componentsystem.cpp */,
+				36EBCAFE2274E9BFCA7EAF75 /* componentsystem.h */,
+				36EBCE2C76505848506352FD /* defaultentitymanager.cpp */,
+				36EBC2BC632CB02892A7590A /* defaultentitymanager.h */,
+				36EBC090F9EFDA2B88ED48E6 /* entitymanagerexception.cpp */,
+				36EBC86BEC506B1386777F9C /* entitymanagerexception.h */,
+			);
+			path = MyFirstProject;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB82736174F532A00155B03 /* MyFirstProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB82740174F532A00155B03 /* Build configuration list for PBXNativeTarget "MyFirstProject" */;
+			buildPhases = (
+				CEB82733174F532A00155B03 /* Sources */,
+				CEB82734174F532A00155B03 /* Frameworks */,
+				CEB82735174F532A00155B03 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyFirstProject;
+			productName = MyFirstProject;
+			productReference = CEB82737174F532A00155B03 /* MyFirstProject */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB8272F174F532A00155B03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = JohnPoison;
+			};
+			buildConfigurationList = CEB82732174F532A00155B03 /* Build configuration list for PBXProject "MyFirstProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEB8272E174F532A00155B03;
+			productRefGroup = CEB82738174F532A00155B03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB82736174F532A00155B03 /* MyFirstProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB82733174F532A00155B03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB8273B174F532A00155B03 /* main.cpp in Sources */,
+				36EBC9F8198B72F4E6C67667 /* entity.cpp in Sources */,
+				36EBC0F9AF8CD95AC39F79D0 /* entitymanager.cpp in Sources */,
+				36EBCF81EDA22BE8C7100BF4 /* icomponent.cpp in Sources */,
+				36EBCCFB868F0F66E3A158AF /* icomponentsystem.cpp in Sources */,
+				36EBC8EF66C00487B30CD9CA /* iservice.cpp in Sources */,
+				36EBC6C41CAF4AE1C6B7D208 /* servicecontainer.cpp in Sources */,
+				36EBC3E223511E8D206A85B2 /* IEntityManager.cpp in Sources */,
+				36EBC8D1A1CAAB2EA17CD609 /* componentsystem.cpp in Sources */,
+				36EBC05917E5488736DAB25A /* defaultentitymanager.cpp in Sources */,
+				36EBC75895C93CF155902698 /* entitymanagerexception.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEB8273E174F532A00155B03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CEB8273F174F532A00155B03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CEB82741174F532A00155B03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_C_LANGUAGE_STANDARD = c11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEB82742174F532A00155B03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				GCC_C_LANGUAGE_STANDARD = c11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB82732174F532A00155B03 /* Build configuration list for PBXProject "MyFirstProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB8273E174F532A00155B03 /* Debug */,
+				CEB8273F174F532A00155B03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB82740174F532A00155B03 /* Build configuration list for PBXNativeTarget "MyFirstProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB82741174F532A00155B03 /* Debug */,
+				CEB82742174F532A00155B03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB8272F174F532A00155B03 /* Project object */;
+}

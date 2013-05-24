@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class IEntityManager : public IService
+class EntityManager : public IService
 {
 private:
     unsigned int lastId_;
