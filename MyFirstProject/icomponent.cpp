@@ -1,5 +1,12 @@
-#include "icomponent.h"
+#include "IComponent.h"
 
 IComponent::IComponent()
 {
 }
+
+IComponent::~IComponent() {
+
+}
+
+
+

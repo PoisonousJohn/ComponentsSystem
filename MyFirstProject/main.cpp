@@ -1,6 +1,7 @@
 #include <iostream>
-#include "servicecontainer.h"
-#include "defaultentitymanager.h"
+#include "ServiceContainer.h"
+#include "DefaultEntityManager.h"
+#include "TestComponent.h"
 
 using namespace std;
 
@@ -14,7 +15,10 @@ int main()
     registerServices();
 
     IEntityManager* em = static_cast<IEntityManager*>(ServiceContainer::sharedContainer().getService("entityManager"));
-    em->registerEntity(new Entity());
+
+    Entity* e = new Entity();
+    em->registerEntity(e);
+    em->addComponent(pIComponent(new TestComponent), e);
 
     return 0;
 }

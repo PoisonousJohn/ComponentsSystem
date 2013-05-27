@@ -1,5 +1,5 @@
 #include <iostream>
-#include "entity.h"
+#include "Entity.h"
 
 Entity::Entity()
 {

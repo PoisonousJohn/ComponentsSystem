@@ -1,6 +1,5 @@
-#include "servicecontainer.h"
+#include "ServiceContainer.h"
 #include <iostream>
-#include <map>
 
 ServiceContainer ServiceContainer::container;
 

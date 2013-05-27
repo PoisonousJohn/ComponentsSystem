@@ -4,7 +4,7 @@
 
 
 
-#include "entitymanagerexception.h"
+#include "EntityManagerException.h"
 
 char const * EntityManagerException::what() const throw() {
     return "entity manager error";

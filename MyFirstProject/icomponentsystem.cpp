@@ -1,4 +1,4 @@
-#include "icomponentsystem.h"
+#include "IComponentSystem.h"
 
 IComponentSystem::IComponentSystem()
 {

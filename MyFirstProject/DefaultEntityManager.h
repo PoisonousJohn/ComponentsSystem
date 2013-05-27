@@ -9,19 +9,30 @@
 #define __DefaultEntityManager_H_
 
 #include <iostream>
-#import "IEntityManager.h"
-#include "icomponent.h"
+#include "IEntityManager.h"
+#include "IComponent.h"
+#include "IComponentSystem.h"
 #include <map>
+#include <deque>
 
 using namespace std;
 
 
 class DefaultEntityManager : public IEntityManager {
 
-    map<int, Entity*> entities_;
-    map<string, IComponent*> components_;
-    map<string, IComponent*> componentsByEid_;
-    map<string, IComponent*> systems_;
+    typedef deque<pIComponent> componentsContainer;
+    typedef map<entityId, componentsContainer > componentsByEidMap;
+    typedef pair<entityId, componentsContainer > componentsByEidMapPair;
+    typedef pair<componentId, componentsByEidMap > componentsByEidPair;
+
+    map<entityId, pEntity> entities_;
+    map<componentId,
+        componentsByEidMap
+    > components_;
+    componentsByEidMap componentsByEid_;
+
+    map<systemId, pIComponentSystem> systems_;
+
     long unsigned int lastId;
     long unsigned int maxId;
 
@@ -35,23 +46,23 @@ public:
 
     virtual void registerEntity(Entity *entity);
 
-    virtual void removeEntity(Entity *entity);
-
-    virtual void addComponent(IComponent *component, Entity *entity);
-
-    virtual void removeComponent(string id, Entity *entity);
-
-    virtual IComponent *getComponent(string id, Entity *entity);
-
-    virtual vector<IComponent *> getComponentsForEntity(Entity *entity);
-
-    virtual vector<Entity *> getEntitiesWithComponent(string id);
-
-    virtual void registerSystem(string id, IComponentSystem *system);
-
-    virtual IComponentSystem *getSystem(string id);
-
     virtual void removeAllEntities();
+
+    virtual void removeEntity(pEntity entity);
+
+    virtual void addComponent(pIComponent component, pEntity entity);
+
+    virtual void removeComponent(componentId id, pEntity entity);
+
+    virtual void registerSystem(systemId id, IComponentSystem *system);
+
+    virtual pIComponent getComponent(componentId id, pEntity entity);
+
+    virtual Components getComponentsForEntity(pEntity entity);
+
+    virtual Entities getEntitiesWithComponent(componentId id);
+
+    virtual IComponentSystem *getSystem(systemId id);
 };
 
 

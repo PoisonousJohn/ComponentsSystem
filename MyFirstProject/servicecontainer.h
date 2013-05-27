@@ -1,6 +1,6 @@
 #include <map>
 #include <string>
-#include "iservice.h"
+#include "IService.h"
 #ifndef SERVICECONTAINER_H
 #define SERVICECONTAINER_H
 
