@@ -8,6 +8,7 @@
 #ifndef __IEntityManager_H_
 #define __IEntityManager_H_
 
+#include <memory>
 #include <iostream>
 #include <list>
 #include <deque>

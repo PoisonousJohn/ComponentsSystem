@@ -6,6 +6,8 @@
 
 #include "DefaultEntityManager.h"
 #include "EntityManagerException.h"
+#include <limits>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,7 +18,13 @@ DefaultEntityManager::DefaultEntityManager() {
 
 DefaultEntityManager::~DefaultEntityManager() {
     cout << "default entity manager destructor" << endl;
+
     removeAllEntities();
+
+    components_.clear();
+    componentsByEid_.clear();
+    systems_.clear();
+
     cout << "entities count " << entities_.size() << endl;
 }
 
@@ -55,25 +63,20 @@ void DefaultEntityManager::addComponent(pIComponent component, pEntity entity) {
         cout << "component " << component->getId() << " not found, creating" << endl;
         // making an empty pair
         componentsByEidMap map;
-        map.insert(componentsByEidMapPair(entity->getId(), componentsContainer()));
-        auto p = componentsByEidPair(component->getId(), map);
-        componentIt = components_.insert(p).first;
+        auto pair = componentsByEidPair(component->getId(), map);
+        componentIt = components_.insert(pair).first;
     }
-
-
 
     auto entityIt = componentIt->second.find(entity->getId());
 
-    if (entityIt != componentIt->second.end()) {
+    if (entityIt == componentIt->second.end()) {
         cout << "entity " << entity->getId() << " not found, creating" << endl;
+        auto pair = componentsByEidMapPair(entity->getId(), componentsContainer());
+//        map.insert();
+        // making an empty pair
     }
 
 
-//    components_.insert(
-//            make_pair(component->getId(),
-//                    make_pair(entity->getId(), <#(_T2)__y#>)
-//            )
-//    );
 }
 
 void DefaultEntityManager::removeComponent(componentId id, pEntity entity) {
