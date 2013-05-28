@@ -1,10 +1,10 @@
 #ifndef ICOMPONENTSYSTEM_H
 #define ICOMPONENTSYSTEM_H
 
-class IComponentSystem
+class ComponentSystemInterface
 {
 public:
-    IComponentSystem();
+    ComponentSystemInterface();
 };
 
 #endif // ICOMPONENTSYSTEM_H

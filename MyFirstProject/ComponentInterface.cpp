@@ -1,4 +1,5 @@
-#include "IComponent.h"
+#include "ComponentInterface.h"
+#include <boost/array.hpp>
 
 IComponent::IComponent()
 {

@@ -9,16 +9,16 @@
 #define __DefaultEntityManager_H_
 
 #include <iostream>
-#include "IEntityManager.h"
-#include "IComponent.h"
-#include "IComponentSystem.h"
+#include "EntityManagerInterface.h"
+#include "ComponentInterface.h"
+#include "ComponentSystemInterface.h"
 #include <map>
 #include <deque>
 
 using namespace std;
 
 
-class DefaultEntityManager : public IEntityManager {
+class DefaultEntityManager : public EntityManagerInterface {
 
     typedef deque<pIComponent> componentsContainer;
     typedef map<entityId, componentsContainer > componentsByEidMap;
@@ -54,7 +54,7 @@ public:
 
     virtual void removeComponent(componentId id, pEntity entity);
 
-    virtual void registerSystem(systemId id, IComponentSystem *system);
+    virtual void registerSystem(systemId id, ComponentSystemInterface *system);
 
     virtual pIComponent getComponent(componentId id, pEntity entity);
 
@@ -62,7 +62,7 @@ public:
 
     virtual Entities getEntitiesWithComponent(componentId id);
 
-    virtual IComponentSystem *getSystem(systemId id);
+    virtual ComponentSystemInterface *getSystem(systemId id);
 };
 
 

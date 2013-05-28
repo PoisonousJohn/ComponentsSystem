@@ -83,7 +83,7 @@ void DefaultEntityManager::removeComponent(componentId id, pEntity entity) {
 
 }
 
-void DefaultEntityManager::registerSystem(systemId id, IComponentSystem *system) {
+void DefaultEntityManager::registerSystem(systemId id, ComponentSystemInterface *system) {
 
 }
 
@@ -102,6 +102,6 @@ Entities DefaultEntityManager::getEntitiesWithComponent(componentId id) {
     return p;
 }
 
-IComponentSystem *DefaultEntityManager::getSystem(systemId id) {
+ComponentSystemInterface *DefaultEntityManager::getSystem(systemId id) {
     return NULL;
 }

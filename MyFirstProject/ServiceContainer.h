@@ -1,6 +1,6 @@
 #include <map>
 #include <string>
-#include "IService.h"
+#include "ServiceInterface.h"
 #ifndef SERVICECONTAINER_H
 #define SERVICECONTAINER_H
 
@@ -10,7 +10,7 @@ class ServiceContainer
 {
 private:
     static ServiceContainer container;
-    map <string, IService*> services_;
+    map <string, ServiceInterface *> services_;
 
     ServiceContainer();
     ServiceContainer(const ServiceContainer&);
@@ -18,11 +18,11 @@ private:
     ~ServiceContainer();
 
 public:
-    void registerService(string serviceId, IService* service) {
-        services_.insert(pair<string, IService*>(serviceId, service));
+    void registerService(string serviceId, ServiceInterface * service) {
+        services_.insert(pair<string, ServiceInterface *>(serviceId, service));
     }
 
-    IService* getService(string serviceId) { return services_.at(serviceId); }
+    ServiceInterface * getService(string serviceId) { return services_.at(serviceId); }
 
     static ServiceContainer& sharedContainer();
 

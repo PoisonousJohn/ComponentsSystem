@@ -9,7 +9,7 @@
 #define __TestComponent_H_
 
 #include <iostream>
-#include "IComponent.h"
+#include "ComponentInterface.h"
 
 
 class TestComponent : public IComponent {

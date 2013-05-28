@@ -14,7 +14,7 @@ int main()
 {
     registerServices();
 
-    IEntityManager* em = static_cast<IEntityManager*>(ServiceContainer::sharedContainer().getService("entityManager"));
+    EntityManagerInterface * em = static_cast<EntityManagerInterface *>(ServiceContainer::sharedContainer().getService("entityManager"));
 
     Entity* e = new Entity();
     em->registerEntity(e);
