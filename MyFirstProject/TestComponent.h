@@ -12,7 +12,7 @@
 #include "ComponentInterface.h"
 
 
-class TestComponent : public IComponent {
+class TestComponent : public ComponentInterface {
 
 public:
     virtual void info();

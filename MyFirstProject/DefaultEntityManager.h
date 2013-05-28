@@ -20,7 +20,7 @@ using namespace std;
 
 class DefaultEntityManager : public EntityManagerInterface {
 
-    typedef deque<pIComponent> componentsContainer;
+    typedef deque<Component> componentsContainer;
     typedef map<entityId, componentsContainer > componentsByEidMap;
     typedef pair<entityId, componentsContainer > componentsByEidMapPair;
     typedef pair<componentId, componentsByEidMap > componentsByEidPair;
@@ -31,7 +31,7 @@ class DefaultEntityManager : public EntityManagerInterface {
     > components_;
     componentsByEidMap componentsByEid_;
 
-    map<systemId, pIComponentSystem> systems_;
+    map<systemId, ComponentSystem> systems_;
 
     long unsigned int lastId;
     long unsigned int maxId;
@@ -50,17 +50,13 @@ public:
 
     virtual void removeEntity(pEntity entity);
 
-    virtual void addComponent(pIComponent component, pEntity entity);
 
     virtual void removeComponent(componentId id, pEntity entity);
 
     virtual void registerSystem(systemId id, ComponentSystemInterface *system);
 
-    virtual pIComponent getComponent(componentId id, pEntity entity);
+    virtual Component getComponent(componentId id, pEntity entity);
 
-    virtual Components getComponentsForEntity(pEntity entity);
-
-    virtual Entities getEntitiesWithComponent(componentId id);
 
     virtual ComponentSystemInterface *getSystem(systemId id);
 };

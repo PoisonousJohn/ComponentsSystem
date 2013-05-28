@@ -56,29 +56,6 @@ void DefaultEntityManager::removeEntity(pEntity entity) {
 
 }
 
-void DefaultEntityManager::addComponent(pIComponent component, pEntity entity) {
-    auto componentIt = components_.find(component->getId());
-
-    if (componentIt == components_.end()) {
-        cout << "component " << component->getId() << " not found, creating" << endl;
-        // making an empty pair
-        componentsByEidMap map;
-        auto pair = componentsByEidPair(component->getId(), map);
-        componentIt = components_.insert(pair).first;
-    }
-
-    auto entityIt = componentIt->second.find(entity->getId());
-
-    if (entityIt == componentIt->second.end()) {
-        cout << "entity " << entity->getId() << " not found, creating" << endl;
-        auto pair = componentsByEidMapPair(entity->getId(), componentsContainer());
-//        map.insert();
-        // making an empty pair
-    }
-
-
-}
-
 void DefaultEntityManager::removeComponent(componentId id, pEntity entity) {
 
 }
@@ -87,18 +64,8 @@ void DefaultEntityManager::registerSystem(systemId id, ComponentSystemInterface 
 
 }
 
-pIComponent DefaultEntityManager::getComponent(componentId id, pEntity entity) {
-    pIComponent p;
-    return p;
-}
-
-Components DefaultEntityManager::getComponentsForEntity(pEntity entity) {
-    Components p;
-    return p;
-}
-
-Entities DefaultEntityManager::getEntitiesWithComponent(componentId id) {
-    Entities p;
+Component DefaultEntityManager::getComponent(componentId id, pEntity entity) {
+    Component p;
     return p;
 }
 

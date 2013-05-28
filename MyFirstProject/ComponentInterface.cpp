@@ -1,11 +1,11 @@
 #include "ComponentInterface.h"
 #include <boost/array.hpp>
 
-IComponent::IComponent()
+ComponentInterface::ComponentInterface()
 {
 }
 
-IComponent::~IComponent() {
+ComponentInterface::~ComponentInterface() {
 
 }
 

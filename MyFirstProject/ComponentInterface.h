@@ -3,13 +3,13 @@
 
 #include <string>
 
-class IComponent
+class ComponentInterface
 {
 public:
-    IComponent();
+    ComponentInterface();
     virtual std::string getId() = 0;
     virtual void info() = 0;
-    virtual ~IComponent();
+    virtual ~ComponentInterface();
 };
 
 #endif // ICOMPONENT_H

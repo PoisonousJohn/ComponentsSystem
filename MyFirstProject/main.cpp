@@ -18,7 +18,7 @@ int main()
 
     Entity* e = new Entity();
     em->registerEntity(e);
-    em->addComponent(pIComponent(new TestComponent), e);
+    em->addComponent(Component(new TestComponent), e);
 
     return 0;
 }

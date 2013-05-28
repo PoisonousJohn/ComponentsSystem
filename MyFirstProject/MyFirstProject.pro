@@ -17,7 +17,7 @@ HEADERS += ComponentSystem.h \
            DefaultEntityManager.h \
            Entity.h \
            EntityManagerException.h \
-           IComponent.h \
+           ComponentInterface.h \
            IComponentSystem.h \
            IEntityManager.h \
            IService.h \
@@ -27,7 +27,7 @@ SOURCES += ComponentSystem.cpp \
            DefaultEntityManager.cpp \
            Entity.cpp \
            EntityManagerException.cpp \
-           IComponent.cpp \
+           ComponentInterface.cpp \
            IComponentSystem.cpp \
            IEntityManager.cpp \
            IService.cpp \
