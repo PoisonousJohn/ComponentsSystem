@@ -22,7 +22,7 @@ DefaultEntityManager::~DefaultEntityManager() {
     removeAllEntities();
 
     components_.clear();
-    componentsByEid_.clear();
+    entitiesComponents_.clear();
     systems_.clear();
 
     cout << "entities count " << entities_.size() << endl;
@@ -52,6 +52,18 @@ void DefaultEntityManager::removeAllEntities() {
     entities_.clear();
 }
 
+void DefaultEntityManager::addComponent(Component component, pEntity entity) {
+//    auto entityComponents = components_.find(entity->getId());
+    std::cout << "inserting component " << component->getId() << std::endl;
+    componentsContainer_.insert_(component);
+    component->setEntityId(entity->getId());
+}
+
+Component DefaultEntityManager::getComponent(componentId id, pEntity entity) {
+    Component p;
+    return p;
+}
+
 void DefaultEntityManager::removeEntity(pEntity entity) {
 
 }
@@ -64,11 +76,14 @@ void DefaultEntityManager::registerSystem(systemId id, ComponentSystemInterface 
 
 }
 
-Component DefaultEntityManager::getComponent(componentId id, pEntity entity) {
-    Component p;
-    return p;
-}
-
 ComponentSystemInterface *DefaultEntityManager::getSystem(systemId id) {
     return NULL;
+}
+
+
+Objects<Component> DefaultEntityManager::getComponentsForEntity(pEntity entity) {
+    return Objects<Component>();
+}
+Objects<Component> DefaultEntityManager::getComponentsWithId(componentId id) {
+    return Objects<Component>();
 }

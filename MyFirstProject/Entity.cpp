@@ -14,7 +14,7 @@ void Entity::setId(unsigned long id) {
     this->id = id;
 }
 
-unsigned long Entity::getId() {
+entityId Entity::getId() const {
     return id;
 }
 

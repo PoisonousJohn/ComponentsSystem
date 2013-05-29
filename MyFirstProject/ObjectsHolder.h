@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <deque>
+#include <unordered_map>
 #include <memory>
 
 template <typename T>
@@ -21,12 +22,23 @@ struct Objects {
 template <typename T>
 class ObjectsHolder {
 
-private:
-    std::deque<T> components_;
+protected:
+    std::deque<T> objects_;
 public:
     Objects<T> getObjects() const;
     void addObject(std::shared_ptr<T> object);
 };
+
+//template <typename Key, typename Value>
+//class IndexedObjectsHolder {
+
+//protected:
+//    std::unordered_map<Key, Value> objects_;
+//public:
+//    bool hasKey(Key key) const { return objects_.find(key) == objects_.end(); }
+//    Value& getObject(Key key) const { return objects_.at(key); }
+//    void addObject(std::shared_ptr<T> object);
+//};
 
 
 #endif //__ComponentsHolder_H_

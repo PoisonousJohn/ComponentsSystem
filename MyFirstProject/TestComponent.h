@@ -15,9 +15,9 @@
 class TestComponent : public ComponentInterface {
 
 public:
-    virtual void info();
+    virtual void info() const;
 
-    virtual std::string getId();
+    virtual std::string getId() const;
 
     virtual ~TestComponent();
 };

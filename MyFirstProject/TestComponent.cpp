@@ -8,17 +8,17 @@
 #include <iostream>
 #include <string>
 
-void TestComponent::info() {
-    std::cout << "test component" << std::endl;
+void TestComponent::info() const {
+    std::cout << "test component for entity " << eid_ << std::endl;
 }
 
 
-std::string TestComponent::getId() {
+std::string TestComponent::getId() const {
     return std::string("testComponentId");
 }
 
 TestComponent::~TestComponent() {
-    std::cout << "test component destructor" << std::endl;
+    std::cout << "test component for entity " << eid_  << " destructor" << std::endl;
 }
 
 

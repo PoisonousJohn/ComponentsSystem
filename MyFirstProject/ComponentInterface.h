@@ -2,13 +2,27 @@
 #define ICOMPONENT_H
 
 #include <string>
+#include "EntityManagerTypes.h"
+#include "Entity.h"
 
 class ComponentInterface
 {
+protected:
+    entityId eid_;
+    ComponentInterface() : eid_(0) {}
+
 public:
-    ComponentInterface();
-    virtual std::string getId() = 0;
-    virtual void info() = 0;
+    // multi_index tags
+    struct componentIdTag{};
+    struct entityIdTag{};
+
+
+
+    entityId getEntityId() const { return eid_; }
+    void setEntityId(const entityId eid) { eid_ = eid; }
+
+    virtual std::string getId() const = 0;
+    virtual void info() const = 0;
     virtual ~ComponentInterface();
 };
 

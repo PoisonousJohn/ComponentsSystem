@@ -18,7 +18,8 @@ int main()
 
     Entity* e = new Entity();
     em->registerEntity(e);
-    em->addComponent(Component(new TestComponent), e);
+    auto component = new TestComponent();
+    em->addComponent(Component(component), e);
 
     return 0;
 }

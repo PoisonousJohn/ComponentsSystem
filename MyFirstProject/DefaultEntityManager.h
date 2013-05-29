@@ -12,26 +12,43 @@
 #include "EntityManagerInterface.h"
 #include "ComponentInterface.h"
 #include "ComponentSystemInterface.h"
-#include <map>
+#include "EntityManagerTypes.h"
+#include <unordered_map>
 #include <deque>
-
-using namespace std;
+#include <boost/multi_index_container.hpp>
+#include <boost/multi_index/member.hpp>
+#include <boost/multi_index/mem_fun.hpp>
+#include <boost/multi_index/hashed_index.hpp>
+#include <memory>
 
 
 class DefaultEntityManager : public EntityManagerInterface {
 
-    typedef deque<Component> componentsContainer;
-    typedef map<entityId, componentsContainer > componentsByEidMap;
-    typedef pair<entityId, componentsContainer > componentsByEidMapPair;
-    typedef pair<componentId, componentsByEidMap > componentsByEidPair;
+    typedef std::unordered_map<entityId, ObjectsHolder<ComponentInterface>> entitiesComponentsMap;
 
-    map<entityId, pEntity> entities_;
-    map<componentId,
-        componentsByEidMap
-    > components_;
-    componentsByEidMap componentsByEid_;
+    typedef boost::multi_index::multi_index_container<
+        Component,
+        boost::multi_index::indexed_by<
+            boost::multi_index::hashed_non_unique<
+//                boost::multi_index::tag<ComponentInterface::componentIdTag>,
+                boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId> >
+            > // end indexed_by
+      > ComponentsIndex;
 
-    map<systemId, ComponentSystem> systems_;
+    ComponentsIndex componentsContainer_;
+
+//    typedef boost::multi_index::multi_index_container<
+//        std::,
+//        boost::multi_index::indexed_by<
+//            boost::multi_index::hashed_unique<
+//                boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId()>
+//            >
+//        >
+//    > d;
+    std::unordered_map<entityId, pEntity> entities_;
+    entitiesComponentsMap entitiesComponents_;
+    std::unordered_map<componentId, ObjectsHolder<ComponentInterface>> components_;
+    std::unordered_map<systemId, ComponentSystem> systems_;
 
     long unsigned int lastId;
     long unsigned int maxId;
@@ -44,21 +61,20 @@ public:
 
     ~DefaultEntityManager();
 
-    virtual void registerEntity(Entity *entity);
-
-    virtual void removeAllEntities();
-
+    virtual void registerEntity(pEntity entity);
     virtual void removeEntity(pEntity entity);
 
-
+    virtual void addComponent(Component component, pEntity entity);
     virtual void removeComponent(componentId id, pEntity entity);
 
-    virtual void registerSystem(systemId id, ComponentSystemInterface *system);
+    virtual void registerSystem(systemId id, ComponentSystemInterface * system);
 
     virtual Component getComponent(componentId id, pEntity entity);
+    virtual Objects<Component> getComponentsForEntity(pEntity entity);
+    virtual Objects<Component> getComponentsWithId(componentId id);
+    virtual ComponentSystemInterface * getSystem(systemId id);
 
-
-    virtual ComponentSystemInterface *getSystem(systemId id);
+    virtual void removeAllEntities();
 };
 
 
