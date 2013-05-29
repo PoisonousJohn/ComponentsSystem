@@ -19,12 +19,9 @@ int main()
     Entity* e = new Entity();
     em->registerEntity(e);
     auto component = new TestComponent();
+
     em->addComponent(Component(component), e);
     auto c = em->getComponent(component->getId(), e);
-
-    if (!c)
-        cout << "not found" << endl;
-    else cout << "found" << endl;
 
     return 0;
 }
