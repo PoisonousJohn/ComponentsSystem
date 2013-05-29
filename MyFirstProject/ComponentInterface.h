@@ -9,9 +9,9 @@ class ComponentInterface
 {
 protected:
     entityId eid_;
-    ComponentInterface() : eid_(0) {}
 
 public:
+    ComponentInterface() : eid_(0) {}
     // multi_index tags
     struct componentIdTag{};
     struct entityIdTag{};

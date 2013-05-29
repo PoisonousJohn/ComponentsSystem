@@ -55,8 +55,9 @@ void DefaultEntityManager::removeAllEntities() {
 void DefaultEntityManager::addComponent(Component component, pEntity entity) {
 //    auto entityComponents = components_.find(entity->getId());
     std::cout << "inserting component " << component->getId() << std::endl;
-    componentsContainer_.insert_(component);
+    componentsContainer_.insert(component);
     component->setEntityId(entity->getId());
+    std::cout << "components count " << componentsContainer_.size() << std::endl;
 }
 
 Component DefaultEntityManager::getComponent(componentId id, pEntity entity) {
