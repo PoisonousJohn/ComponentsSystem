@@ -55,6 +55,7 @@
 		36EBC892ECB696F61F125E02 /* ComponentInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentInterface.cpp; sourceTree = "<group>"; };
 		36EBC8D599A9C068F8728DA1 /* ServiceInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ServiceInterface.cpp; sourceTree = "<group>"; };
 		36EBCAFE2274E9BFCA7EAF75 /* ComponentSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentSystem.h; sourceTree = "<group>"; };
+		36EBCC29699D54FBFD533A1D /* EntityManagerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityManagerTypes.h; sourceTree = "<group>"; };
 		36EBCCAE2ED2AF336CB3B7F8 /* ObjectsHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectsHolder.h; sourceTree = "<group>"; };
 		36EBCE08B395C6B58436E5E1 /* MyFirstProject.pro.user */ = {isa = PBXFileReference; lastKnownFileType = file.user; path = MyFirstProject.pro.user; sourceTree = "<group>"; };
 		36EBCE2C76505848506352FD /* DefaultEntityManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultEntityManager.cpp; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 				36EBC09C0D09DF5A82C0527B /* TestComponent.h */,
 				36EBC35DD157E54440FE2B1C /* ObjectsHolder.cpp */,
 				36EBCCAE2ED2AF336CB3B7F8 /* ObjectsHolder.h */,
+				36EBCC29699D54FBFD533A1D /* EntityManagerTypes.h */,
 			);
 			path = MyFirstProject;
 			sourceTree = "<group>";

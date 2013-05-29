@@ -55,12 +55,20 @@ void DefaultEntityManager::removeAllEntities() {
 void DefaultEntityManager::addComponent(Component component, pEntity entity) {
 //    auto entityComponents = components_.find(entity->getId());
     std::cout << "inserting component " << component->getId() << std::endl;
-    componentsContainer_.insert(component);
     component->setEntityId(entity->getId());
+    componentsContainer_.insert(component);
     std::cout << "components count " << componentsContainer_.size() << std::endl;
 }
 
 Component DefaultEntityManager::getComponent(componentId id, pEntity entity) {
+    auto componentIt = componentsContainer_.get<ComponentInterface::byComponentAndEntityIdTag>().find(boost::tuples::make_tuple(id, entity->getId()));
+    auto endIt = componentsContainer_.get<ComponentInterface::byComponentAndEntityIdTag>().end();
+
+    if (componentIt == endIt)
+        std::cerr << ">>>>> NOT FOUND <<<<<<<<" << std::endl;
+    else
+        std::cout << ">>>>>> FOUND <<<<<<<<<<" << std::endl;
+
     Component p;
     return p;
 }

@@ -19,6 +19,7 @@
 #include <boost/multi_index/member.hpp>
 #include <boost/multi_index/mem_fun.hpp>
 #include <boost/multi_index/hashed_index.hpp>
+#include <boost/multi_index/composite_key.hpp>
 #include <memory>
 
 
@@ -30,9 +31,19 @@ class DefaultEntityManager : public EntityManagerInterface {
         Component,
         boost::multi_index::indexed_by<
             boost::multi_index::hashed_non_unique<
-//                boost::multi_index::tag<ComponentInterface::componentIdTag>,
-                boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId> >
-            > // end indexed_by
+                boost::multi_index::tag<ComponentInterface::byComponentIdTag>,
+                boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId>
+            >,
+            boost::multi_index::hashed_non_unique<
+                boost::multi_index::tag<ComponentInterface::byComponentAndEntityIdTag>,
+                boost::multi_index::composite_key<
+                    Component,
+                    boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId>,
+                    boost::multi_index::const_mem_fun<ComponentInterface, entityId, &ComponentInterface::getEntityId>
+                >
+            >
+        >
+
       > ComponentsIndex;
 
     ComponentsIndex componentsContainer_;

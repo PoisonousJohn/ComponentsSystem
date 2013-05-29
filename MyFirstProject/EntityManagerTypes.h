@@ -11,7 +11,7 @@ class ComponentSystemInterface;
 typedef long unsigned int entityId;
 typedef std::string componentId;
 typedef std::string systemId;
-typedef boost::shared_ptr<ComponentInterface> Component;
+typedef std::shared_ptr<ComponentInterface> Component;
 typedef Entity* pEntity;
 typedef std::shared_ptr<ComponentSystemInterface> ComponentSystem;
 

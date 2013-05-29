@@ -13,8 +13,9 @@ protected:
 public:
     ComponentInterface() : eid_(0) {}
     // multi_index tags
-    struct componentIdTag{};
-    struct entityIdTag{};
+    struct byComponentIdTag {};
+    struct byEntityIdTag {};
+    struct byComponentAndEntityIdTag{};
 
 
 

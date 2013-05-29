@@ -5,9 +5,14 @@
 TEMPLATE = app
 #TARGET =
 #DEPENDPATH += .
-INCLUDEPATH += .
+INCLUDEPATH += /opt/local/include
 
+LIBS += -stdlib=libc++
+
+QMAKE_CXXFLAGS += -stdlib=libc++
 QMAKE_CXXFLAGS += -std=c++11
+QMAKE_CXXFLAGS += -mmacosx-version-min=10.7
+QMAKE_LFLAGS += -mmacosx-version-min=10.7
 
 # Input
 HEADERS += ComponentInterface.h \
@@ -21,7 +26,7 @@ HEADERS += ComponentInterface.h \
            ServiceContainer.h \
            ServiceInterface.h \
            TestComponent.h \
-    EntityManagerTypes.h
+           EntityManagerTypes.h
 SOURCES += ComponentInterface.cpp \
            ComponentSystem.cpp \
            ComponentSystemInterface.cpp \
