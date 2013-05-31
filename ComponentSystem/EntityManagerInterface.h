@@ -16,9 +16,7 @@
 #include "ComponentSystemInterface.h"
 #include "Entity.h"
 #include "ServiceInterface.h"
-#include "ObjectsHolder.h"
 #include "EntityManagerTypes.h"
-
 
 class EntityManagerInterface : public ServiceInterface {
 public:
@@ -32,8 +30,8 @@ public:
     virtual void registerSystem(systemId id, ComponentSystemInterface * system) = 0;
 
     virtual Component getComponent(componentId id, pEntity entity) = 0;
-    virtual Objects<Component> getComponentsForEntity(pEntity entity) = 0;
-    virtual Objects<Component> getComponentsWithId(componentId id) = 0;
+    virtual Components getComponentsForEntity(pEntity entity) = 0;
+    virtual Components getComponentsWithId(componentId id) = 0;
     virtual ComponentSystemInterface * getSystem(systemId id) = 0;
 
     virtual void removeAllEntities() = 0;

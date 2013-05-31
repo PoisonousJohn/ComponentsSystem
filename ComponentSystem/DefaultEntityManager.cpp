@@ -21,8 +21,6 @@ DefaultEntityManager::~DefaultEntityManager() {
 
     removeAllEntities();
 
-    components_.clear();
-    entitiesComponents_.clear();
     systems_.clear();
 
     cout << "entities count " << entities_.size() << endl;
@@ -53,10 +51,11 @@ void DefaultEntityManager::removeAllEntities() {
 }
 
 void DefaultEntityManager::addComponent(Component component, pEntity entity) {
-//    auto entityComponents = components_.find(entity->getId());
     std::cout << "inserting component " << component->getId() << std::endl;
+
     component->setEntityId(entity->getId());
     componentsContainer_.insert(component);
+
     std::cout << "components count " << componentsContainer_.size() << std::endl;
 }
 
@@ -64,17 +63,19 @@ Component DefaultEntityManager::getComponent(componentId id, pEntity entity) {
     auto componentIt = componentsContainer_.get<ComponentInterface::byComponentAndEntityIdTag>().find(boost::tuples::make_tuple(id, entity->getId()));
     auto endIt = componentsContainer_.get<ComponentInterface::byComponentAndEntityIdTag>().end();
 
-    if (componentIt == endIt)
-        std::cerr << ">>>>> NOT FOUND <<<<<<<<" << std::endl;
-    else
-        std::cout << ">>>>>> FOUND <<<<<<<<<<" << std::endl;
+    if (componentIt != endIt) {
+        return *componentIt;
+    }
 
-    Component p;
-    return p;
+    std::cerr << "Component not found" << std::endl;
+    throw EntityManagerException();
 }
 
 void DefaultEntityManager::removeEntity(pEntity entity) {
-
+    entities_.erase(entity->getId());
+    ComponentsIndex::index<ComponentInterface::byEntityIdTag>::type::iterator first, last;
+    boost::tuples::tie(first, last) = componentsContainer_.get<ComponentInterface::byEntityIdTag>().equal_range(entity->getId());
+    componentsContainer_.get<ComponentInterface::byEntityIdTag>().erase(first, last);
 }
 
 void DefaultEntityManager::removeComponent(componentId id, pEntity entity) {
@@ -90,9 +91,13 @@ ComponentSystemInterface *DefaultEntityManager::getSystem(systemId id) {
 }
 
 
-Objects<Component> DefaultEntityManager::getComponentsForEntity(pEntity entity) {
-    return Objects<Component>();
+Components DefaultEntityManager::getComponentsForEntity(pEntity entity) {
+    ComponentsIndex::index<ComponentInterface::byEntityIdTag>::type::iterator first, last;
+    boost::tuples::tie(first, last) = componentsContainer_.get<ComponentInterface::byEntityIdTag>().equal_range(entity->getId());
+    return Components(first, last);
 }
-Objects<Component> DefaultEntityManager::getComponentsWithId(componentId id) {
-    return Objects<Component>();
+Components DefaultEntityManager::getComponentsWithId(componentId id) {
+    ComponentsIndex::index<ComponentInterface::byComponentIdTag>::type::iterator first, last;
+    boost::tuples::tie(first, last) = componentsContainer_.get<ComponentInterface::byComponentIdTag>().equal_range(id);
+    return Components(first, last);
 }

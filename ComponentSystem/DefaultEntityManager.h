@@ -20,12 +20,11 @@
 #include <boost/multi_index/mem_fun.hpp>
 #include <boost/multi_index/hashed_index.hpp>
 #include <boost/multi_index/composite_key.hpp>
+#include <boost/multi_index/random_access_index.hpp>
 #include <memory>
 
 
 class DefaultEntityManager : public EntityManagerInterface {
-
-    typedef std::unordered_map<entityId, ObjectsHolder<ComponentInterface>> entitiesComponentsMap;
 
     typedef boost::multi_index::multi_index_container<
         Component,
@@ -33,6 +32,10 @@ class DefaultEntityManager : public EntityManagerInterface {
             boost::multi_index::hashed_non_unique<
                 boost::multi_index::tag<ComponentInterface::byComponentIdTag>,
                 boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId>
+            >,
+            boost::multi_index::hashed_non_unique<
+                boost::multi_index::tag<ComponentInterface::byEntityIdTag>,
+                boost::multi_index::const_mem_fun<ComponentInterface, entityId, &ComponentInterface::getEntityId>
             >,
             boost::multi_index::hashed_non_unique<
                 boost::multi_index::tag<ComponentInterface::byComponentAndEntityIdTag>,
@@ -43,22 +46,11 @@ class DefaultEntityManager : public EntityManagerInterface {
                 >
             >
         >
-
-      > ComponentsIndex;
+    > ComponentsIndex;
 
     ComponentsIndex componentsContainer_;
 
-//    typedef boost::multi_index::multi_index_container<
-//        std::,
-//        boost::multi_index::indexed_by<
-//            boost::multi_index::hashed_unique<
-//                boost::multi_index::const_mem_fun<ComponentInterface, std::string, &ComponentInterface::getId()>
-//            >
-//        >
-//    > d;
     std::unordered_map<entityId, pEntity> entities_;
-    entitiesComponentsMap entitiesComponents_;
-    std::unordered_map<componentId, ObjectsHolder<ComponentInterface>> components_;
     std::unordered_map<systemId, ComponentSystem> systems_;
 
     long unsigned int lastId;
@@ -81,8 +73,8 @@ public:
     virtual void registerSystem(systemId id, ComponentSystemInterface * system);
 
     virtual Component getComponent(componentId id, pEntity entity);
-    virtual Objects<Component> getComponentsForEntity(pEntity entity);
-    virtual Objects<Component> getComponentsWithId(componentId id);
+    virtual Components getComponentsForEntity(pEntity entity);
+    virtual Components getComponentsWithId(componentId id);
     virtual ComponentSystemInterface * getSystem(systemId id);
 
     virtual void removeAllEntities();
