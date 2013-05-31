@@ -18,7 +18,6 @@ HEADERS += ComponentInterface.h \
            Entity.h \
            EntityManagerException.h \
            EntityManagerInterface.h \
-           ObjectsHolder.h \
            ServiceContainer.h \
            ServiceInterface.h \
            TestComponent.h \
@@ -31,7 +30,6 @@ SOURCES += ComponentInterface.cpp \
            EntityManagerException.cpp \
            EntityManagerInterface.cpp \
            main.cpp \
-           ObjectsHolder.cpp \
            ServiceContainer.cpp \
            ServiceInterface.cpp \
            TestComponent.cpp
