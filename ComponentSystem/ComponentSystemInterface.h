@@ -5,6 +5,7 @@ class ComponentSystemInterface
 {
 public:
     ComponentSystemInterface();
+    virtual ~ComponentSystemInterface() {}
 };
 
 #endif // ICOMPONENTSYSTEM_H
