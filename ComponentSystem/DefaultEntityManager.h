@@ -70,12 +70,12 @@ public:
     virtual void addComponent(Component component, pEntity entity);
     virtual void removeComponent(componentId id, pEntity entity);
 
-    virtual void registerSystem(systemId id, ComponentSystemInterface * system);
+    virtual void registerSystem(systemId id, ComponentSystem system);
 
     virtual Component getComponent(componentId id, pEntity entity);
     virtual Components getComponentsForEntity(pEntity entity);
     virtual Components getComponentsWithId(componentId id);
-    virtual ComponentSystemInterface * getSystem(systemId id);
+    virtual ComponentSystem getSystem(systemId id);
 
     virtual void removeAllEntities();
 };

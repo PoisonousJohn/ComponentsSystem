@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <deque>
+#include <vector>
 #include <boost/shared_ptr.hpp>
 
 template <typename T1, typename T2>

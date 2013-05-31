@@ -79,17 +79,18 @@ void DefaultEntityManager::removeEntity(pEntity entity) {
 }
 
 void DefaultEntityManager::removeComponent(componentId id, pEntity entity) {
-
+    ComponentsIndex::index<ComponentInterface::byComponentAndEntityIdTag>::type::iterator first, last;
+    boost::tuples::tie(first, last) = componentsContainer_.get<ComponentInterface::byComponentAndEntityIdTag>().equal_range(boost::tuples::make_tuple(id, entity->getId()));
+    componentsContainer_.get<ComponentInterface::byComponentAndEntityIdTag>().erase(first, last);
 }
 
-void DefaultEntityManager::registerSystem(systemId id, ComponentSystemInterface *system) {
-
+void DefaultEntityManager::registerSystem(systemId id, ComponentSystem system) {
+    systems_.insert(std::make_pair(id, system));
 }
 
-ComponentSystemInterface *DefaultEntityManager::getSystem(systemId id) {
-    return NULL;
+ComponentSystem DefaultEntityManager::getSystem(systemId id) {
+    return systems_.at(id);
 }
-
 
 Components DefaultEntityManager::getComponentsForEntity(pEntity entity) {
     ComponentsIndex::index<ComponentInterface::byEntityIdTag>::type::iterator first, last;

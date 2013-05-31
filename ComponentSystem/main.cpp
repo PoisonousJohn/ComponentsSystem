@@ -22,10 +22,7 @@ int main()
         em->registerEntity(e);
         auto component = new TestComponent();
         em->addComponent(Component(component), e);
-        auto c = em->getComponent(component->getId(), e);
     }
-
-//    em->removeEntity(e);
 
     auto components = em->getComponentsWithId("testComponentIdd");
 
