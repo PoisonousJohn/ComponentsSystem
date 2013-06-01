@@ -50,7 +50,7 @@ class DefaultEntityManager : public EntityManagerInterface {
 
     ComponentsIndex componentsContainer_;
 
-    std::unordered_map<entityId, pEntity> entities_;
+    std::unordered_map<entityId, EntityPtr> entities_;
     std::unordered_map<systemId, ComponentSystem> systems_;
 
     long unsigned int lastId;
@@ -64,18 +64,18 @@ public:
 
     ~DefaultEntityManager();
 
-    virtual void registerEntity(pEntity entity);
-    virtual void removeEntity(pEntity entity);
+    virtual void registerEntity(EntityPtr entity);
+    virtual void removeEntity(EntityPtr entity);
 
-    virtual void addComponent(Component component, pEntity entity);
-    virtual void removeComponent(componentId id, pEntity entity);
+    virtual void addComponent(Component component, EntityPtr entity);
+    virtual void removeComponent(componentId id, EntityPtr entity);
 
-    virtual void registerSystem(systemId id, ComponentSystemInterface * system);
+    virtual void registerSystem(systemId id, ComponentSystem system);
 
-    virtual Component getComponent(componentId id, pEntity entity);
-    virtual Components getComponentsForEntity(pEntity entity);
+    virtual Component getComponent(componentId id, EntityPtr entity);
+    virtual Components getComponentsForEntity(EntityPtr entity);
     virtual Components getComponentsWithId(componentId id);
-    virtual ComponentSystemInterface * getSystem(systemId id);
+    virtual ComponentSystem getSystem(systemId id);
 
     virtual void removeAllEntities();
 };

@@ -21,18 +21,18 @@
 class EntityManagerInterface : public ServiceInterface {
 public:
 
-    virtual void registerEntity(pEntity entity) = 0;
-    virtual void removeEntity(pEntity entity) = 0;
+    virtual void registerEntity(EntityPtr entity) = 0;
+    virtual void removeEntity(EntityPtr entity) = 0;
 
-    virtual void addComponent(Component component, pEntity entity) = 0;
-    virtual void removeComponent(componentId id, pEntity entity) = 0;
+    virtual void addComponent(Component component, EntityPtr entity) = 0;
+    virtual void removeComponent(componentId id, EntityPtr entity) = 0;
 
-    virtual void registerSystem(systemId id, ComponentSystemInterface * system) = 0;
+    virtual void registerSystem(systemId id, ComponentSystem system) = 0;
 
-    virtual Component getComponent(componentId id, pEntity entity) = 0;
-    virtual Components getComponentsForEntity(pEntity entity) = 0;
+    virtual Component getComponent(componentId id, EntityPtr entity) = 0;
+    virtual Components getComponentsForEntity(EntityPtr entity) = 0;
     virtual Components getComponentsWithId(componentId id) = 0;
-    virtual ComponentSystemInterface * getSystem(systemId id) = 0;
+    virtual ComponentSystem getSystem(systemId id) = 0;
 
     virtual void removeAllEntities() = 0;
 };
