@@ -9,13 +9,7 @@ class TestSystem : public ComponentSystemInterface
 public:
     TestSystem();
     virtual ~TestSystem();
-
+    virtual std::string info() const;
 };
-
-//std::ostream & operator << (std::ostream &ostream, const TestSystem &)
-//{
-//    ostream << "test system";
-//    return ostream;
-//}
 
 #endif // TESTSYSTEM_H

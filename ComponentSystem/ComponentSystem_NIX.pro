@@ -12,7 +12,6 @@ QMAKE_CXXFLAGS += -std=c++11
 
 # Input
 HEADERS += ComponentInterface.h \
-           ComponentSystem.h \
            ComponentSystemInterface.h \
            DefaultEntityManager.h \
            Entity.h \
@@ -21,9 +20,9 @@ HEADERS += ComponentInterface.h \
            ServiceContainer.h \
            ServiceInterface.h \
            TestComponent.h \
-           EntityManagerTypes.h
+           EntityManagerTypes.h \
+           TestSystem.h
 SOURCES += ComponentInterface.cpp \
-           ComponentSystem.cpp \
            ComponentSystemInterface.cpp \
            DefaultEntityManager.cpp \
            Entity.cpp \
@@ -32,4 +31,5 @@ SOURCES += ComponentInterface.cpp \
            main.cpp \
            ServiceContainer.cpp \
            ServiceInterface.cpp \
+           TestSystem.cpp \
            TestComponent.cpp
