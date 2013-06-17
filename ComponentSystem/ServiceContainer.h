@@ -1,28 +1,30 @@
-#include <map>
-#include <string>
-#include "ServiceInterface.h"
 #ifndef SERVICECONTAINER_H
 #define SERVICECONTAINER_H
 
-using namespace std;
+#include <map>
+#include <string>
+#include <memory>
+#include "ServiceInterface.h"
 
 class ServiceContainer
 {
 private:
     static ServiceContainer container;
-    map <string, ServiceInterface *> services_;
+    std::map <std::string, std::shared_ptr<ServiceInterface> > services_;
 
     ServiceContainer();
+    ~ServiceContainer();
+    
+    // forbid copy
     ServiceContainer(const ServiceContainer&);
     ServiceContainer& operator=(const ServiceContainer&);
-    ~ServiceContainer();
-
+    
 public:
-    void registerService(string serviceId, ServiceInterface * service) {
-        services_.insert(pair<string, ServiceInterface *>(serviceId, service));
+    void registerService(std::string serviceId, ServiceInterface * service) {
+        services_.insert(std::make_pair(serviceId, std::shared_ptr<ServiceInterface>(service)));
     }
 
-    ServiceInterface * getService(string serviceId) { return services_.at(serviceId); }
+    std::shared_ptr<ServiceInterface> getService(std::string serviceId) { return services_.at(serviceId); }
 
     static ServiceContainer& sharedContainer();
 
