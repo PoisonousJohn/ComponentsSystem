@@ -31,9 +31,11 @@ int main()
         c->info();
     });
 
-    auto system = ComponentSystem(new TestSystem());
 
-    cout << system << endl;
+    em->registerSystem("test", ComponentSystem(new TestSystem()));
+    auto system = em->getSystem("test");
+
+    cout << *system << endl;
 
     return 0;
 }
