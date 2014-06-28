@@ -10,7 +10,9 @@ CONFIG -= qt
 #DEPENDPATH += .
 INCLUDEPATH += /opt/local/include
 INCLUDEPATH += ../
-LIBS += -stdlib=libc++
+LIBS += -stdlib=libc++ -lboost_unit_test_framework-mt
+
+LIBPATH += /opt/local/lib
 
 QMAKE_CXXFLAGS += -stdlib=libc++
 QMAKE_CXXFLAGS += -std=c++11
@@ -25,9 +27,14 @@ HEADERS += \
     Entity.h \
     EntityManager.h \
     EntityManagerException.h \
-    EntityManagerTypes.h
+    EntityManagerTypes.h \
+    ../ServiceContainer/ServiceContainer.h \
+    ../ServiceContainer/ServiceInterface.h
 
 SOURCES += \
+    ../main.cpp \
     Component.cpp \
     ComponentSystem.cpp \
-    DefaultEntityManager.cpp
+    DefaultEntityManager.cpp \
+    ../ServiceContainer/ServiceContainer.cpp \
+    ../ServiceContainer/ServiceInterface.cpp
