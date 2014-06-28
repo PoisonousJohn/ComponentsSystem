@@ -1,0 +1,3 @@
+[submodule "ServiceContainer"]
+	path = ServiceContainer
+	url = https://github.com/JohnPoison/ServiceContainer.git
