@@ -11,10 +11,14 @@
 #include <iostream>
 #include <exception>
 
+namespace poison {
+    class EntityManagerException : public std::exception {
+        virtual const char* what() const throw() {
+            return "entity manager error";
+        }
+    };
+}
 
-class EntityManagerException : public std::exception {
-    virtual char const *what() const throw();
-};
 
 
 #endif //__entitymanagerexception_H_

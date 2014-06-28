@@ -3,37 +3,31 @@
 ######################################################################
 
 TEMPLATE = app
+CONFIG += console
+CONFIG -= app_bundle
+CONFIG -= qt
 #TARGET =
 #DEPENDPATH += .
 INCLUDEPATH += /opt/local/include
-
+INCLUDEPATH += ../
 LIBS += -stdlib=libc++
 
 QMAKE_CXXFLAGS += -stdlib=libc++
 QMAKE_CXXFLAGS += -std=c++11
+QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.7 #2
 QMAKE_CXXFLAGS += -mmacosx-version-min=10.7
 QMAKE_LFLAGS += -mmacosx-version-min=10.7
 
-# Input
-HEADERS += ComponentInterface.h \
-           ComponentSystemInterface.h \
-           DefaultEntityManager.h \
-           Entity.h \
-           EntityManagerException.h \
-           EntityManagerInterface.h \
-           ServiceContainer.h \
-           ServiceInterface.h \
-           TestComponent.h \
-           EntityManagerTypes.h \
-    TestSystem.h
-SOURCES += ComponentInterface.cpp \
-           ComponentSystemInterface.cpp \
-           DefaultEntityManager.cpp \
-           Entity.cpp \
-           EntityManagerException.cpp \
-           EntityManagerInterface.cpp \
-           main.cpp \
-           ServiceContainer.cpp \
-           ServiceInterface.cpp \
-           TestComponent.cpp \
-    TestSystem.cpp
+HEADERS += \
+    Component.h \
+    ComponentSystem.h \
+    DefaultEntityManager.h \
+    Entity.h \
+    EntityManager.h \
+    EntityManagerException.h \
+    EntityManagerTypes.h
+
+SOURCES += \
+    Component.cpp \
+    ComponentSystem.cpp \
+    DefaultEntityManager.cpp
